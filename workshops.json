@@ -2,9 +2,18 @@
     {
         "id": 1,
         "title": "Practical Work 03",
-        "date": "Oct 15, 2026",
+        "date": "Sep 29, 2026",
         "material": "Databases",
-        "description": "",
+        "description": "sqlplus",
         "link": "workshops/databases/pw-3/pw-3.html"
+    },
+
+    {
+        "id": 2,
+        "title": "Practical Work 01 & 02 & 03",
+        "date": "Sep 29, 2026",
+        "material": "Angular",
+        "description": "Introduction to Angular",
+        "link": "workshops/angular/pw-1-2-3/pw-1-2-3.html"
     }
 ]

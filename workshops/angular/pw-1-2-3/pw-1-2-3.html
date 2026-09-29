@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angular - MesProduits</title>
+
+    <style>
+      /* ===== Base ===== */
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: #080a08;
+        color: #d7e0d7;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        line-height: 1.65;
+      }
+
+      /* ===== Main document ===== */
+      main {
+        width: min(900px, calc(100% - 32px));
+        margin: 40px auto;
+      }
+
+      /* ===== Header ===== */
+      header {
+        padding: 35px;
+        margin-bottom: 35px;
+        background: #101410;
+        border: 1px solid #263026;
+        border-left: 4px solid #4caf50;
+        box-shadow: 0 8px 30px #000;
+      }
+
+      header h1 {
+        margin: 0;
+        color: #7cff8b;
+        font-family: "Courier New", Courier, monospace;
+        font-size: clamp(28px, 5vw, 42px);
+        letter-spacing: 1px;
+      }
+
+      header p {
+        margin: 10px 0 0;
+        color: #899589;
+        font-size: 17px;
+      }
+
+      /* ===== Sections ===== */
+      section {
+        margin: 35px 0;
+        padding: 25px;
+        background: #0e120e;
+        border: 1px solid #222b22;
+        border-radius: 6px;
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.45);
+      }
+
+      section h2 {
+        margin: 0 0 25px;
+        padding-bottom: 12px;
+        color: #9aff9f;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 22px;
+        border-bottom: 1px solid #293329;
+      }
+
+      /* ===== Steps ===== */
+      .step {
+        margin: 25px 0 10px;
+        color: #e5ebe5;
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      .number {
+        display: inline-block;
+        min-width: 32px;
+        margin-right: 8px;
+        padding: 2px 7px;
+        color: #081008;
+        background: #69d96f;
+        border-radius: 3px;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 14px;
+        text-align: center;
+      }
+
+      /* ===== Images ===== */
+      figure {
+        margin: 15px 0 30px;
+        padding: 10px;
+        background: #050705;
+        border: 1px solid #273027;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+
+      figure img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: auto;
+      }
+
+      /* ===== Code / commands ===== */
+      code {
+        padding: 3px 7px;
+        color: #8cff96;
+        background: #050705;
+        border: 1px solid #202820;
+        border-radius: 3px;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 0.92em;
+      }
+
+      .command {
+        display: block;
+        margin: 12px 0;
+        padding: 14px 18px;
+        color: #9aff9f;
+        background: #030503;
+        border-left: 3px solid #4caf50;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 15px;
+        overflow-x: auto;
+      }
+
+      /* ===== Links ===== */
+      a {
+        color: #72cfff;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: #a5e4ff;
+        text-decoration: underline;
+      }
+
+      /* ===== Notes ===== */
+      .note {
+        margin: 20px 0;
+        padding: 14px 18px;
+        color: #d8d0a0;
+        background: #141308;
+        border-left: 3px solid #b5a447;
+      }
+
+      /* ===== Page breaks ===== */
+      .page-break {
+        height: 1px;
+        margin: 50px 0;
+        border-top: 1px dashed #293029;
+        page-break-before: always;
+      }
+
+      /* ===== Footer ===== */
+      footer {
+        padding: 30px 0 50px;
+        color: #566056;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 13px;
+        text-align: center;
+      }
+
+      /* ===== Mobile ===== */
+      @media (max-width: 600px) {
+        main {
+          width: calc(100% - 20px);
+          margin: 15px auto;
+        }
+
+        header,
+        section {
+          padding: 18px;
+        }
+
+        section h2 {
+          font-size: 19px;
+        }
+
+        body {
+          font-size: 15px;
+        }
+
+        .step {
+          font-size: 15px;
+        }
+      }
+
+      /* ===== Printing ===== */
+      @media print {
+        body {
+          color: #000;
+          background: #fff;
+        }
+
+        section,
+        header {
+          background: #fff;
+          box-shadow: none;
+          border-color: #ccc;
+        }
+
+        header h1,
+        section h2 {
+          color: #000;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <header>
+        <h1>Angular — MesProduits</h1>
+        <p>
+          Guide pratique de création d'une application Angular avec Bootstrap.
+        </p>
+      </header>
+
+      <section>
+        <h2>⚡ Mise en place du projet</h2>
+
+        <p class="step">
+          <span class="number">0</span>Save Your Time
+        </p>
+        <figure>
+          <img src="images/141.gif" alt="Time Saving GIF" />
+        </figure>
+
+        <p class="step">
+          <span class="number">1</span>Créer un projet Angular nommé
+          <code>MesProduits</code>.
+        </p>
+        <figure>
+          <img src="images/image15.png" alt="Création du projet Angular" />
+        </figure>
+
+        <p class="step">
+          <span class="number">2</span>
+          Éditer le projet avec VS Code, créer un terminal et lancer le serveur
+          intégré.
+        </p>
+
+        <p class="step">
+          <span class="number">3</span>
+          Tester votre travail :
+          <a href="http://localhost:4200">http://localhost:4200</a>
+        </p>
+
+        <figure><img src="images/image33.png" alt="Serveur Angular" /></figure>
+
+        <p class="step">
+          <span class="number">4</span>
+          Installer Bootstrap :
+        </p>
+
+        <code class="command">npm install bootstrap</code>
+
+        <figure>
+          <img src="images/image6.png" alt="Installation de Bootstrap" />
+        </figure>
+
+        <p class="step">
+          <span class="number">5</span>
+          Éditer le fichier <code>angular.json</code>.
+        </p>
+
+        <figure><img src="images/image26.png" alt="angular.json" /></figure>
+
+        <p class="step">
+          <span class="number">6</span>
+          Éditer le fichier <code>app.html</code>.
+        </p>
+
+        <figure><img src="images/image40.png" alt="app.html" /></figure>
+        <figure><img src="images/image32.png" alt="app.html" /></figure>
+
+        <p class="step">
+          <span class="number">7</span>
+          Ajouter <code>bootstrap.bundle.min.js</code> dans la rubrique
+          <code>scripts</code> de <code>angular.json</code>.
+        </p>
+
+        <figure>
+          <img src="images/image42.png" alt="Bootstrap JavaScript" />
+        </figure>
+
+        <p class="step">
+          <span class="number">8</span>
+          Redémarrer le serveur :
+        </p>
+
+        <code class="command">q + Enter → ng serve</code>
+
+        <p class="step">
+          <span class="number">9</span>
+          Tester les listes déroulantes.
+        </p>
+
+        <figure><img src="images/image39.png" alt="Dropdown" /></figure>
+      </section>
+
+      <section>
+        <h2>📦 Composant Produits</h2>
+
+        <p class="step">
+          <span class="number">10</span>
+          Créer le composant Web <code>produits</code>.
+        </p>
+
+        <figure>
+          <img src="images/image3.png" alt="Création du composant produits" />
+        </figure>
+
+        <p class="step">
+          <span class="number">11</span>
+          Éditer <code>app.routes.ts</code> et ajouter la route « produits ».
+        </p>
+
+        <figure><img src="images/image37.png" alt="Route produits" /></figure>
+
+        <p class="step">
+          <span class="number">12</span>
+          Éditer <code>app.html</code> pour ajouter le lien vers le composant
+          produits.
+        </p>
+
+        <figure><img src="images/image22.png" alt="Lien produits" /></figure>
+
+        <p class="step">
+          <span class="number">13</span>
+          Importer <code>RouterLink</code> dans <code>app.ts</code>.
+        </p>
+
+        <figure><img src="images/image23.png" alt="RouterLink" /></figure>
+
+        <p class="step">
+          <span class="number">14</span>
+          Tester le lien en cliquant sur « Home ».
+        </p>
+
+        <figure><img src="images/image13.png" alt="Page Home" /></figure>
+      </section>
+
+      <section>
+        <h2>➕ Ajouter un produit</h2>
+
+        <p class="step">
+          <span class="number">15</span>
+          Créer le composant <code>add-produit</code>.
+        </p>
+
+        <figure><img src="images/image4.png" alt="" /></figure>
+        <figure><img src="images/image28.png" alt="" /></figure>
+        <figure><img src="images/image5.png" alt="" /></figure>
+        <figure><img src="images/image9.png" alt="" /></figure>
+
+        <p class="step">
+          <span class="number">17</span>
+          Ajouter le lien vers <code>add-produits</code> dans
+          <code>app.html</code>.
+        </p>
+
+        <figure><img src="images/image35.png" alt="" /></figure>
+
+        <p class="step">
+          <span class="number">18</span>
+          Ajouter <code>/produits</code> comme composant par défaut.
+        </p>
+
+        <figure><img src="images/image35.png" alt="" /></figure>
+
+        <p class="step">
+          <span class="number">19</span>
+          Aller sur
+          <a href="http://localhost:4200/produits">
+            http://localhost:4200/produits
+          </a>
+        </p>
+
+        <figure><img src="images/image1.png" alt="" /></figure>
+      </section>
+
+      <section>
+        <h2>📋 Gestion des produits</h2>
+
+        <p class="step">
+          <span class="number">20</span>
+          Dans la classe <code>Produits</code>, créer l'attribut
+          <code>produits</code> comme tableau de produits.
+        </p>
+
+        <p class="step">
+          <span class="number">21</span>
+          Dans le constructeur, affecter des produits au tableau.
+        </p>
+
+        <figure><img src="images/image24.png" alt="" /></figure>
+
+        <p class="step">
+          <span class="number">22</span>
+          Afficher la liste des produits dans <code>produits.html</code>.
+        </p>
+
+        <figure><img src="images/image27.png" alt="" /></figure>
+
+        <p class="step">
+          <span class="number">23</span>
+          Importer <code>CommonModule</code> dans <code>produits.ts</code> pour
+          utiliser <code>*ngFor</code>.
+        </p>
+
+        <figure><img src="images/image36.png" alt="" /></figure>
+        <figure><img src="images/image8.png" alt="" /></figure>
+        <figure><img src="images/image31.png" alt="" /></figure>
+        <figure><img src="images/image2.png" alt="" /></figure>
+        <figure><img src="images/image16.png" alt="" /></figure>
+      </section>
+
+      <div class="page-break"></div>
+
+      <section>
+        <h2>🧩 Modèle Produit</h2>
+
+        <p class="step">
+          <span class="number">1</span>
+          Créer le dossier <code>model</code> sous <code>app</code>, puis créer
+          <code>produit.model.ts</code>.
+        </p>
+
+        <figure><img src="images/image11.png" alt="" /></figure>
+
+        <p class="step">
+          <span class="number">2</span>
+          Modifier la déclaration de l'attribut <code>produits</code>.
+        </p>
+
+        <p class="step">
+          <span class="number">3</span>
+          Affecter trois produits au tableau.
+        </p>
+
+        <figure><img src="images/image43.png" alt="" /></figure>
+
+        <p class="step">
+          <span class="number">4</span>
+          Modifier <code>produits.html</code>.
+        </p>
+
+        <figure><img src="images/image21.png" alt="" /></figure>
+        <figure><img src="images/image7.png" alt="" /></figure>
+        <figure><img src="images/image38.png" alt="" /></figure>
+        <figure><img src="images/image30.png" alt="" /></figure>
+        <figure><img src="images/image12.png" alt="" /></figure>
+        <figure><img src="images/image41.png" alt="" /></figure>
+        <figure><img src="images/image34.png" alt="" /></figure>
+        <figure><img src="images/image29.png" alt="" /></figure>
+      </section>
+
+      <section>
+        <h2>📝 Formulaire d'ajout</h2>
+
+        <p class="step">
+          <span class="number">5</span>
+          Importer <code>FormsModule</code> dans
+          <code>add-produit.ts</code> pour utiliser le Two Way Binding avec
+          <code>ngModel</code>.
+        </p>
+
+        <p class="step">
+          <span class="number">6</span>
+          Ajouter l'attribut <code>newProduit</code> à
+          <code>AddProduitComponent</code>.
+        </p>
+
+        <p class="step">
+          <span class="number">7</span>
+          Ajouter la méthode <code>addProduit()</code>.
+        </p>
+
+        <figure><img src="images/image25.png" alt="" /></figure>
+
+        <p class="step">
+          <span class="number">8</span>
+          Modifier <code>add-produit.component.html</code>.
+        </p>
+
+        <figure><img src="images/image19.png" alt="" /></figure>
+
+        <p class="step"><span class="number">9</span> Étapes 9 &amp; 10.</p>
+        <figure><img src="images/image14.png" alt="" /></figure>
+
+        <p class="step"><span class="number">11</span></p>
+        <figure><img src="images/image20.png" alt="" /></figure>
+
+        <p class="step"><span class="number">12</span></p>
+        <figure><img src="images/image20.png" alt="" /></figure>
+      </section>
+
+      <section>
+        <h2>🗑️ Modifier et supprimer</h2>
+
+        <p class="step">
+          <span class="number">1</span>
+          Ajouter un lien pour supprimer un produit.
+        </p>
+
+        <figure><img src="images/image10.gif" alt="" /></figure>
+
+        <p class="step">
+          <span class="number">2</span>
+          Ajouter un formulaire pour modifier un produit.
+        </p>
+
+        <figure><img src="images/image17.gif" alt="" /></figure>
+
+        <p class="step">
+          <span class="number">3</span>
+          Transmettre des paramètres avec <code>ActivatedRoute</code>.
+        </p>
+
+        <p class="step">
+          <span class="number">4</span>
+          Naviguer entre les pages avec <code>Router</code>.
+        </p>
+
+        <p class="step">
+          <span class="number">5</span>
+          Cacher le champ ID Produit ou le rendre <code>Read Only</code>.
+        </p>
+
+        <figure><img src="images/image18.gif" alt="" /></figure>
+      </section>
+
+      <footer>Angular · MesProduits · Guide pratique</footer>
+    </main>
+  </body>
+</html>

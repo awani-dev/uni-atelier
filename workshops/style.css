@@ -1,37 +1,54 @@
 @import url('./asciinema/asciinema-player.css');
 
 :root {
-  --font-sans:
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
+    --font-sans:
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
 
-  --font-mono:
-    ui-monospace,
-    SFMono-Regular,
-    Menlo,
-    Monaco,
-    Consolas,
-    "Liberation Mono",
-    monospace;
+    --font-mono:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        monospace;
 }
 
-body{
+* {
+    margin: none;
+    padding: none;
+}
+
+body {
     background-color: black;
     color: white;
-    padding: 0;
-    text-align: center;
     font-family: var(--font-mono);
 }
-img{
+
+img {
     width: 80vw;
     height: auto;
 }
-#asciinema-container{
-    width: 60vw;
+
+#title {
+    text-align: center;
+    font-size: 4vw;
+    font-weight: bolder;
+}
+
+.bloc {
     height: auto;
-    margin: 0 auto;
+    width: 80vw;
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 20px;
+    background-color: rgb(15, 15, 15);
+    border-radius: 1em;
+
 }

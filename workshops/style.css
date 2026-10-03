@@ -31,8 +31,11 @@ body {
 }
 
 img {
-    width: 80vw;
+    width: 70vw;
     height: auto;
+    margin: auto;
+    border-radius: 1em;
+
 }
 
 #title {
@@ -45,10 +48,10 @@ img {
     height: auto;
     width: 80vw;
     margin: auto;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    padding: 20px;
-    background-color: rgb(15, 15, 15);
-    border-radius: 1em;
+    margin-bottom: 5em;
+    padding: 3em;
+    background-color: rgb(68, 68, 68);
+    border-radius: 0.8em;
+    border: solid black  0.1em;
 
 }

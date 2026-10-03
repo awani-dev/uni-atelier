@@ -18,14 +18,18 @@ async function loadBlocs(jsonFilePath) {
       const heading = document.createElement('h2');
       heading.textContent = item.title;
 
-      // Create and populate the img element
-      const image = document.createElement('img');
-      image.src = item.imageUrl;
-      image.alt = item.altText || item.title;
-
-      // Append heading and image to the bloc div
       blocDiv.appendChild(heading);
-      blocDiv.appendChild(image);
+
+
+      item.imagesUrl.forEach(url => {
+        const image = document.createElement('img');
+        image.src = url;
+
+        blocDiv.appendChild(image);
+
+        
+      });
+      // Append heading and image to the bloc div
 
       // Append the bloc div to the main container
       container.appendChild(blocDiv);

@@ -1,23 +1,39 @@
 [
   {
-    "title": "",
-    "imageUrl": "./assets/",
-    "altText": ""
+    "title": "Final Results",
+    "imagesUrl": ["./assets/174.gif"]
   },
   {
-    "title": "",
-    "imageUrl": "./assets/",
-    "altText": ""
+    "title": "Create a new project named Restaurant Manager",
+    "imagesUrl": ["./assets/144.jpg"]
   },
   {
-    "title": "",
-    "imageUrl": "./assets/",
-    "altText": ""
+    "title": "Installing Bootstrap",
+    "imagesUrl": ["./assets/145.jpg", "./assets/147.jpg", "./assets/150.jpg", "./assets/155.jpg", "./assets/156.jpg"]
   },
   {
-    "title": "",
-    "imageUrl": "./assets/",
-    "altText": ""
+    "title": "Adding a Nav bar",
+    "imagesUrl": ["./assets/152.jpg", "./assets/153.jpg", "./assets/154.jpg", "./assets/157.jpg"]
+  },
+  {
+    "title": "Creating a Restaurant Model",
+    "imagesUrl": ["./assets/158.jpg"]
+  },
+  {
+    "title": "Creating a Restaurant Model",
+    "imagesUrl": ["./assets/158.jpg"]
+  },
+  {
+    "title": "Creating Restaurants Service",
+    "imagesUrl": ["./assets/160.jpg", "./assets/162.jpg", "./assets/161.jpg"]
+  },
+  {
+    "title": "Generating Other Components",
+    "imagesUrl": ["./assets/163.jpg", "./assets/165.jpg", "./assets/168.jpg"]
+  },
+  {
+    "title": "Coding...",
+    "imagesUrl": ["./assets/166.jpg", "./assets/169.jpg", "./assets/170.jpg", "./assets/171.jpg"]
   }
 
 ]
